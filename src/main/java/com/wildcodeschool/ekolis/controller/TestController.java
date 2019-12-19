@@ -1,20 +1,23 @@
 package com.wildcodeschool.ekolis.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.wildcodeschool.ekolis.service.ConnectApi;
+import com.wildcodeschool.ekolis.entities.Journey;
+import com.wildcodeschool.ekolis.utils.FilterNode;
 
 @Controller
 public class TestController {
 
-	private ConnectApi connectApi = new ConnectApi();
+	private FilterNode filterNode = new FilterNode();
 	
-	@GetMapping("/")
-	public String toHome() {
-		JsonNode jsonNode = connectApi.createUrl();
-		System.out.println(jsonNode);
+	@GetMapping("/journeys")
+	public String toHome(Model model) {
+		List<Journey> journeys = filterNode.buildJourneys("1.89514;47.89324", "1.90876;47.9115");
+		model.addAttribute("journeys", journeys);
 		return "home";
 	}
 }

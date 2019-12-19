@@ -5,6 +5,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div th:each="journey : ${journeys}">
+	<p th:text="|Emission CO2: ${journey.emissionCo2}|">Emission</p>
+	<p th:text="|Durée du trajet: ${journey.duration}|">Duration</p>
+	<p th:text="|Type du trajet: ${journey.type}|">Type</p>
+	<p th:text="|Distance du trajet: ${journey.distance}|">Distance</p>
+	<p th:text="|Temps de marche: ${journey.walkDuration}|">Marche</p>
+	<br>
+</div>
 </body>
 </html>
