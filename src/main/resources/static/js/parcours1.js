@@ -8,6 +8,16 @@ var mymap = L.map('mapid').setView([47.8989, 1.9015], 15);
 		id: 'mapbox/streets-v11'
 	}).addTo(mymap);
 
+	
+// var latlngs = [
+//     [47.89400, 1.89510],
+//     [47.88400, 1.88510],
+//     [47.87400, 1.87510]
+// ];
+// var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+
+
+
 var arrivalIcon = L.icon({
     iconUrl: '../pictures/arrivee.svg',
     iconSize:     [38, 95], 
@@ -32,7 +42,7 @@ document.getElementById('depart').onclick=showDepart;
 function showArrivee(){
 	var markerArrivee = L.marker([pos4[0], pos4[1]], {icon: arrivalIcon}).addTo(mymap);
 	mymap.setView([pos4[0], pos4[1]], 18);
-	markerArrivee.bindPopup("<b>Arrivée</b><br>Parc de Lignerolles").openPopup();
+	markerArrivee.bindPopup("<b>Arrivée</b><br>Palais des Sports").openPopup();
 }
 
 document.getElementById('arrivee').onclick=showArrivee;
@@ -46,4 +56,13 @@ function showEtape2() {
 	var markerEtape2 = L.marker([pos3[0], pos3[1]], {icon: departIcon}).addTo(mymap);
 	mymap.setView([pos3[0], pos3[1]], 18);
 }
+
+var latlngs = [
+    [47.89400, 1.89510],
+    [47.88400, 1.88510],
+    [47.87400, 1.87510]
+];
+var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+// zoom the map to the polyline
+map.fitBounds(polyline.getBounds())
 
