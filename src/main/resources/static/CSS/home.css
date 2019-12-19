@@ -17,9 +17,12 @@ body{
 h1 {
 	font-size: 130px!important;
 	padding-top: 50px;
+	color: #CD5C5C;
 }
+
 h2 {
 	padding-top: 100px;
+	color: #CD5C5C;
 }
 
 .by {
@@ -45,14 +48,16 @@ h2 {
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4); }
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4); 
+}
   .button span,
   .button .icon {
     display: block;
     height: 100%;
     text-align: center;
     position: absolute;
-    top: 0; }
+    top: 0; 
+}
   .button span {
     width: 72%;
     line-height: inherit;
@@ -60,7 +65,8 @@ h2 {
     text-transform: uppercase;
     left: 0;
 	padding-top: 20px;
-    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4); }
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4); 
+}
     .button span:after {
       content: '';
       background-color: #fff;
@@ -68,34 +74,49 @@ h2 {
       height: 70%;
       position: absolute;
       top: 15%;
-      right: -1px; }
+      right: -1px; 
+}
   .button .icon {
     width: 28%;
     right: 0;
 	padding-top: 20px;
-    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4); }
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4); 
+}
     .button .icon .fa {
       font-size: 30px;
       vertical-align: middle;
-      transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease; }
+      transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease; 
+}
     .button .icon .fa-remove {
-      height: 36px; }
+      height: 36px; 
+}
   .button.success span, .button:hover span {
     left: -72%;
-    opacity: 0; }
+    opacity: 0; 
+}
   .button.success .icon, .button:hover .icon {
-    width: 100%; }
+    width: 100%;
+	color: #fff;
+	font-size: 70px 
+}
     .button.success .icon .fa, .button:hover .icon .fa {
-      font-size: 70px; }
+      font-size: 70px; 
+}
   .button.success {
-    background-color: #fff; }
+    background-color: #fff; 
+}
     .button.success .icon .fa-remove {
-      display: none; }
+      display: none; 
+}
     .button.success .icon .fa-check {
-      display: inline-block; }
+      display: inline-block;
+}
   .button:hover {
-    opacity: .9; }
+    opacity: .9; 
+}
     .button:hover .icon .fa-remove {
-      height: 46px; }
+      height: 46px; 
+}
   .button:active {
-    opacity: 1; }
+    opacity: 1; 
+}
