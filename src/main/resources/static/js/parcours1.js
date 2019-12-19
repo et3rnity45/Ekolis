@@ -32,6 +32,13 @@ var departIcon = L.icon({
     popupAnchor:  [-3, -76]
 });
 
+var etapeIcon = L.icon({
+    iconUrl: '../pictures/avatar1.svg',
+    iconSize:     [38, 95],
+    iconAnchor:   [22, 94], 
+    popupAnchor:  [-3, -76]
+});
+
 function showDepart(){
 	var markerDepart = L.marker([pos1[0], pos1[1]], {icon: departIcon}).addTo(mymap);
 	mymap.setView([pos1[0], pos1[1]], 18);
@@ -44,18 +51,19 @@ function showArrivee(){
 	mymap.setView([pos4[0], pos4[1]], 18);
 	markerArrivee.bindPopup("<b>Arrivée</b><br>Palais des Sports").openPopup();
 }
-
 document.getElementById('arrivee').onclick=showArrivee;
 
 function showEtape1() {
 	var markerEtape1 = L.marker([pos2[0], pos2[1]], {icon: departIcon}).addTo(mymap);
 	mymap.setView([pos2[0], pos2[1]], 18);
 }
+document.getElementById('etape').onclick=showEtape1
 
 function showEtape2() {
 	var markerEtape2 = L.marker([pos3[0], pos3[1]], {icon: departIcon}).addTo(mymap);
 	mymap.setView([pos3[0], pos3[1]], 18);
 }
+document.getElementById('etape').onclick=showEtape2
 
 var latlngs = [
     [47.89400, 1.89510],
