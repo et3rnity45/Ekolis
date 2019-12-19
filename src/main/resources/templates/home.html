@@ -5,12 +5,34 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div th:each="journey : ${journeys}">
-	<p th:text="|Emission CO2: ${journey.emissionCo2}|">Emission</p>
-	<p th:text="|Durée du trajet: ${journey.duration}|">Duration</p>
-	<p th:text="|Type du trajet: ${journey.type}|">Type</p>
-	<p th:text="|Distance du trajet: ${journey.distance}|">Distance</p>
-	<p th:text="|Temps de marche: ${journey.walkDuration}|">Marche</p>
+<div th:each="journey1 : ${journeys1}">
+	<p th:text="|Emission CO2: ${journey1.emissionCo2}|">Emission</p>
+	<p th:text="|Durée du trajet: ${journey1.duration}|">Duration</p>
+	<p th:text="|Type du trajet: ${journey1.type}|">Type</p>
+	<p th:text="|Distance du trajet: ${journey1.distance}|">Distance</p>
+	<p th:text="|Temps de marche: ${journey1.walkDuration}|">Marche</p>
+	<br>
+</div>
+<br>
+<br>
+<br>
+<div th:each="journey2 : ${journeys2}">
+	<p th:text="|Emission CO2: ${journey2.emissionCo2}|">Emission</p>
+	<p th:text="|Durée du trajet: ${journey2.duration}|">Duration</p>
+	<p th:text="|Type du trajet: ${journey2.type}|">Type</p>
+	<p th:text="|Distance du trajet: ${journey2.distance}|">Distance</p>
+	<p th:text="|Temps de marche: ${journey2.walkDuration}|">Marche</p>
+	<br>
+</div>
+<br>
+<br>
+<br>
+<div th:each="journey3 : ${journeys3}">
+	<p th:text="|Emission CO2: ${journey3.emissionCo2}|">Emission</p>
+	<p th:text="|Durée du trajet: ${journey3.duration}|">Duration</p>
+	<p th:text="|Type du trajet: ${journey3.type}|">Type</p>
+	<p th:text="|Distance du trajet: ${journey3.distance}|">Distance</p>
+	<p th:text="|Temps de marche: ${journey3.walkDuration}|">Marche</p>
 	<br>
 </div>
 </body>
