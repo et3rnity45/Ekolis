@@ -5,7 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Menu</title>
-<link rel="stylesheet" href="/menu.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<link rel="stylesheet" href="/css/menu.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>  
 </head>
@@ -17,23 +18,14 @@
 	<section class="levels">
 		<h2 class="text-center">Choissez un avatar pour le mode jeu !</h2>
 		<div class="avatars">
-			<div>
 				<img class ="avatar" src="https://via.placeholder.com/150x150" alt="first avatar"></img>
-				<p class="text-center"> 1er avatar</p>
-			</div>
-			<div>
 				<img class ="avatar" src="https://via.placeholder.com/150x150" alt="second avatar"></img>
-				<p class="text-center">2eme avatar</p>
-			</div>
-			<div>
 				<img class ="avatar" src="https://via.placeholder.com/150x150" alt="third avatar"></img>
-				<p class="text-center"> 3eme avatar</p>
-			</div>
 		</div>
 	</section>
 	<section class="levels">
-		<button class="level">Niveau 1</button>
-		<button class="level">Niveau 2</button>
+		<button class="level" href="/parcours1">Niveau 1</button>
+		<button class="level ">Niveau 2</button>
 		<button class="level">Niveau 3</button>  
 	</section>
 	</section>
@@ -49,7 +41,7 @@
 window.onload = setClass();
 
 function setClass() {
-	var isLocked = [true, false, false];
+	var isLocked = [true, true, false];
 	const buttons = document.getElementsByClassName('level');
 
 	[...buttons].forEach((button, i) => {
@@ -60,7 +52,7 @@ function setClass() {
 		}
 	});
 	const validatedButtons = document.getElementsByClassName('validated')
-	validatedButtons[validatedButtons.length-1].classList.add('play');
+	validatedButtons[validatedButtons.length-1].classList.add('play' ,'animated' , 'infinite' , 'pulse');
 }
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
