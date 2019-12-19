@@ -33,6 +33,8 @@ body  {
   
   .avatar {
   	border-radius:10px;
+  	width:150px; 	
+ 	height:150px;
   }
   
   .levels, .gamemode {
