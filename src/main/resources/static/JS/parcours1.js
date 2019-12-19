@@ -8,6 +8,16 @@ var mymap = L.map('mapid').setView([47.8989, 1.9015], 15);
 		id: 'mapbox/streets-v11'
 	}).addTo(mymap);
 
+	
+// var latlngs = [
+//     [47.89400, 1.89510],
+//     [47.88400, 1.88510],
+//     [47.87400, 1.87510]
+// ];
+// var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+
+
+
 var arrivalIcon = L.icon({
     iconUrl: '../pictures/arrivee.svg',
     iconSize:     [38, 95], 
@@ -35,4 +45,13 @@ function showArrivee(){
 	markerArrivee.bindPopup("<b>Arrivée</b><br>Palais des sports").openPopup();
 }
 document.getElementById('arrivee').onclick=showArrivee;
+
+var latlngs = [
+    [47.89400, 1.89510],
+    [47.88400, 1.88510],
+    [47.87400, 1.87510]
+];
+var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+// zoom the map to the polyline
+map.fitBounds(polyline.getBounds())
 
