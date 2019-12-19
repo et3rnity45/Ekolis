@@ -29,7 +29,6 @@ public class FilterNode {
 			} else {
 				transportType = "Marche";
 			}
-			System.out.println(jsonObject.get(i).get("distances").get("walking").intValue());
 			Integer emissionCo2 = jsonObject.get(i).get("co2_emission").get("value").intValue();
 			Integer duration = jsonObject.get(i).get("duration").intValue();
 			Integer walkDuration = jsonObject.get(i).get("durations").get("walking").intValue();

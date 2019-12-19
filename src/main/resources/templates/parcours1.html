@@ -44,9 +44,7 @@
 					<div class="row justify-content">
 						<div class="col-11 mt-4 ml-auto mr-auto border rounded etape">
 							<h1>Etape 1</h1>
-							<p th:text="|Choisissez votre moyen de transport : ${journeys1[0].distance / 1000},${journeys1[0].distance % 1000} m|">
-								Choisissez le moyen de vous rendre de xxxxx à xxxxxx : x kms
-							</p>
+							<p>Choisissez le moyen de vous rendre de xxxxx à xxxxxx : x kms</p>
 							<div class="container">
 								<div class="row border-bottom">
 									<div class="col-6">
@@ -60,24 +58,18 @@
 									<div class="col-6">
 										<p>A vélo</p>
 									</div>
-									<div class="col-6">
-										<p>temps</p>
+									<div class="col-6" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Vélo'}">
+										<p th:if="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m0${journey.duration % 60}s|">temps</p>
+										<p th:unless="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m${journey.duration % 60}s|">temps</p>
 									</div>
 								</div>
 								<div class="row border-bottom">
 									<div class="col-6">
 										<p>En bus</p>
 									</div>
-									<div class="col-6">
-										<p>temps</p>
-									</div>
-								</div>
-								<div class="row border-bottom">
-									<div class="col-6">
-										<p>En tram</p>
-									</div>
-									<div class="col-6">
-										<p>temps</p>
+									<div class="col-6" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Bus/Tram'}">
+										<p th:if="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m0${journey.duration % 60}s|">temps</p>
+										<p th:unless="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m${journey.duration % 60}s|">temps</p>
 									</div>
 								</div>
 								<div class="row border-bottom">
@@ -92,8 +84,9 @@
 									<div class="col-6">
 										<p>A pied</p>
 									</div>
-									<div class="col-6">
-										<p>temps</p>
+									<div class="col-6" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Marche'}">
+										<p th:if="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m0${journey.duration % 60}s|">temps</p>
+										<p th:unless="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m${journey.duration % 60}s|">temps</p>
 									</div>
 								</div>
 							</div>
