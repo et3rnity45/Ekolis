@@ -15,14 +15,15 @@ public class ConnectApi {
 	private JsonNode jsonObject;
 	
 	
-	public JsonNode createUrl() {
+	public JsonNode createRequest(String fromPos, String toPos) {
 		
 		WebClient webClient = WebClient.create(url);
 		Mono<String> call = webClient.get()
 			      .uri(uriBuilder-> uriBuilder
 			    		  .path("/coverage/{coverage}/journeys")
-			              .queryParam("from", "1.63130;47.77787")
-			              .queryParam("to", "1.90544;47.90806")
+			              .queryParam("from", fromPos)
+			              .queryParam("to", toPos)
+			              .queryParam("traveler_type", "fast_walker")
 			              .build("fr-cen"))
 			      .headers(headers -> headers.setBasicAuth(token, ""))
 			      .retrieve()
