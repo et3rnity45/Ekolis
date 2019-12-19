@@ -12,15 +12,29 @@ public class FilterNode {
 	private ConnectApi connectApi = new ConnectApi();
 	
 	public List<Journey> buildJourneys(String from, String to) {
-		JsonNode jsonObject = connectApi.createRequest(from, to);
+		String transportType = "";
+		
+		String[] parts = from.split(", ");
+		String newFrom = parts[1] + ";" + parts[0];
+		parts = to.split(", ");
+		String newTo = parts[1] + ";" + parts[0];
+		
+		JsonNode jsonObject = connectApi.createRequest(newFrom, newTo);
 		List<Journey> journeys = new ArrayList<>();
 		for (int i = 0; i < jsonObject.size(); i++) {
+			if (jsonObject.get(i).get("distances").get("bike").intValue() != 0) {
+				transportType = "Vélo";
+			} else if (jsonObject.get(i).get("co2_emission").get("value").intValue() != 0) {
+				transportType = "Bus/Tram";
+			} else {
+				transportType = "Marche";
+			}
+			System.out.println(jsonObject.get(i).get("distances").get("walking").intValue());
 			Integer emissionCo2 = jsonObject.get(i).get("co2_emission").get("value").intValue();
-			String duration = jsonObject.get(i).get("duration").toString();
-			Integer distance = jsonObject.get(i).get("distances").get("walking").intValue();
+			Integer duration = jsonObject.get(i).get("duration").intValue();
 			Integer walkDuration = jsonObject.get(i).get("durations").get("walking").intValue();
 			String type = jsonObject.get(i).get("type").toString();
-			journeys.add(new Journey(emissionCo2, duration, distance, walkDuration, type));
+			journeys.add(new Journey(transportType, emissionCo2, duration, walkDuration, type));
 		}
 		return journeys;
 	}

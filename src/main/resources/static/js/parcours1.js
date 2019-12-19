@@ -23,16 +23,27 @@ var departIcon = L.icon({
 });
 
 function showDepart(){
-	var markerDepart = L.marker([47.89400, 1.89510], {icon: departIcon}).addTo(mymap);
-	mymap.setView([47.89400, 1.89510], 18);
+	var markerDepart = L.marker([pos1[0], pos1[1]], {icon: departIcon}).addTo(mymap);
+	mymap.setView([pos1[0], pos1[1]], 18);
 	markerDepart.bindPopup("<b>Départ</b><br>WildCodeSchool").openPopup();
 }
 document.getElementById('depart').onclick=showDepart;
 
 function showArrivee(){
-	var markerArrivee = L.marker([47.90986, 1.91220], {icon: arrivalIcon}).addTo(mymap);
-	mymap.setView([47.90986, 1.91220], 18);
-	markerArrivee.bindPopup("<b>Arrivée</b><br>Palais des sports").openPopup();
+	var markerArrivee = L.marker([pos4[0], pos4[1]], {icon: arrivalIcon}).addTo(mymap);
+	mymap.setView([pos4[0], pos4[1]], 18);
+	markerArrivee.bindPopup("<b>Arrivée</b><br>Parc de Lignerolles").openPopup();
 }
+
 document.getElementById('arrivee').onclick=showArrivee;
+
+function showEtape1() {
+	var markerEtape1 = L.marker([pos2[0], pos2[1]], {icon: departIcon}).addTo(mymap);
+	mymap.setView([pos2[0], pos2[1]], 18);
+}
+
+function showEtape2() {
+	var markerEtape2 = L.marker([pos3[0], pos3[1]], {icon: departIcon}).addTo(mymap);
+	mymap.setView([pos3[0], pos3[1]], 18);
+}
 
