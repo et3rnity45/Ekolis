@@ -17,4 +17,9 @@ public class TestController {
 		System.out.println(jsonNode);
 		return "home";
 	}
+	
+	@GetMapping("/menu")
+	public String toMenu() {
+		return "menu";
+	}
 }
