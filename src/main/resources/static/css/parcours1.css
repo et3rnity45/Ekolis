@@ -1,11 +1,14 @@
 .page{
 	width: 612px;
 	height: 1258px;
-	background-image:url(../pictures/natural-wallpaper.jpg);
+/* 	background-image:url(../pictures/basketball.png); */
 	border: 1px solid red;
 }
 .cont{
 	max-width: 612px !important;
+}
+p {
+	margin: 0px;
 }
 
 /*carte*/
@@ -40,17 +43,25 @@
 }
 
 .mission{
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bolder;
 }
 .voir-carte{
 	width: 150px;
 	height:30px;
+	margin-bottom: 5px;
 	background: #d3d7cf;
 	color: green;
 	border-radius: 20px;
 	text-align: center;
 
+}
+
+.etape{
+	background: white;
+}
+.th{
+	font-weight: bold;
 }
 
 /*boutton jeu*/

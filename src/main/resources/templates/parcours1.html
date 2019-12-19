@@ -33,24 +33,68 @@
 						</div>
 					</div>
 					<div class="row justify-content">
-						<div class="col-11 mt-4 ml-auto mr-auto align-middle text-center">
-							<p class="mission">Votre mission, si vous l'acceptez, sera de vous rendre au Palais des sports depuis le Labo</p>
+						<div class="col-9 mt-1 ">
+							<p class="mission">Votre mission, si vous l'acceptez, sera de vous rendre du Labo au Palais des sports.</p>
 						</div>
-						<div class="col-10 ml-auto mr-auto align-middle text-center">
-							<div class="row justify-content-between">
-								<div class="col-4"> 
-									<button class="voir-carte"><p>voir le départ</p></button>
-								</div>
-								<div class="col-4">
-									<button class="voir-carte"><p>voir l'arrivée</p></button>
-								</div>
-							</div>
+						<div class="col-2 mr-1"> 
+							<button id="depart" class="voir-carte"><p>voir le départ</p></button>
+							<button id="arrivee" class="voir-carte"><p>voir l'arrivée</p></button>
 						</div>
 					</div>
 					<div class="row justify-content">
-						<div class="col-11 mt-4 ml-auto mr-auto">
-
-
+						<div class="col-11 mt-4 ml-auto mr-auto border rounded etape">
+							<h1>Etape 1</h1>
+							<p>Choisisez le moyen de vous rendre de xxxxx à xxxxxx : x kms</p>
+							<div class="container">
+								<div class="row border-bottom">
+									<div class="col-6">
+										<p class="th">Moyen de transport</p>
+									</div>
+									<div class="col-6">
+										<p class="th">Temps de parcours</p>
+									</div>
+								</div>
+								<div class="row border-bottom">
+									<div class="col-6">
+										<p>A vélo</p>
+									</div>
+									<div class="col-6">
+										<p>temps</p>
+									</div>
+								</div>
+								<div class="row border-bottom">
+									<div class="col-6">
+										<p>En bus</p>
+									</div>
+									<div class="col-6">
+										<p>temps</p>
+									</div>
+								</div>
+								<div class="row border-bottom">
+									<div class="col-6">
+										<p>En tram</p>
+									</div>
+									<div class="col-6">
+										<p>temps</p>
+									</div>
+								</div>
+								<div class="row border-bottom">
+									<div class="col-6">
+										<p>En voiture</p>
+									</div>
+									<div class="col-6">
+										<p>temps</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-6">
+										<p>A pied</p>
+									</div>
+									<div class="col-6">
+										<p>temps</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -100,23 +144,12 @@
 	</div>
 
 
-<script>
-	var mymap = L.map('mapid').setView([47.8989, 1.9015], 15);
 
-	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 18,
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox/streets-v11'
-	}).addTo(mymap);
-
-	var marker = L.marker([47.8989, 1.9015]).addTo(mymap);
-</script>
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="../JS/parcours1.js"></script>
 </body>
 </html>
