@@ -23,6 +23,7 @@ public class ConnectApi {
 			    		  .path("/coverage/{coverage}/journeys")
 			              .queryParam("from", fromPos)
 			              .queryParam("to", toPos)
+			              .queryParam("traveler_type", "fast_walker")
 			              .build("fr-cen"))
 			      .headers(headers -> headers.setBasicAuth(token, ""))
 			      .retrieve()

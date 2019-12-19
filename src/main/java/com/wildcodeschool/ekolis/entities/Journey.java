@@ -2,18 +2,26 @@ package com.wildcodeschool.ekolis.entities;
 
 public class Journey {
 	
+	private String transportType;
 	private Integer emissionCo2;
-	private String duration;
-	private Integer distance;
+	private Integer duration;
 	private Integer walkDuration;
 	private String type;
 	
-	public Journey(Integer emissionCo2, String duration, Integer distance, Integer walkDuration, String type) {
+	public Journey(String transportType, Integer emissionCo2, Integer duration, Integer walkDuration, String type) {
+		this.transportType = transportType;
 		this.emissionCo2 = emissionCo2;
 		this.duration = duration;
-		this.distance = distance;
 		this.walkDuration = walkDuration;
 		this.type = type;
+	}
+	
+	public String getTransportType() {
+		return transportType;
+	}
+
+	public void setTransportType(String transportType) {
+		this.transportType = transportType;
 	}
 
 	public Integer getEmissionCo2() {
@@ -24,20 +32,12 @@ public class Journey {
 		this.emissionCo2 = emissionCo2;
 	}
 
-	public String getDuration() {
+	public Integer getDuration() {
 		return duration;
 	}
 
-	public void setDuration(String duration) {
+	public void setDuration(Integer duration) {
 		this.duration = duration;
-	}
-
-	public Integer getDistance() {
-		return distance;
-	}
-
-	public void setDistance(Integer distance) {
-		this.distance = distance;
 	}
 	
 	public Integer getWalkDuration() {
