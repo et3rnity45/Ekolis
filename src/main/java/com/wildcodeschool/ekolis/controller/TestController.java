@@ -33,4 +33,9 @@ public class TestController {
 		model.addAttribute("journeys3", journeys3);
 		return "home";
 	}
+	
+	@GetMapping("/menu")
+	public String toMenu() {
+		return "menu";
+	}
 }

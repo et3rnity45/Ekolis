@@ -1,39 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Home - EKOLIS</title>
+<link rel="stylesheet" href="/CSS/home.css">
+<link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 </head>
-<body>
-<div th:each="journey1 : ${journeys1}">
-	<p th:text="|Transport: ${journey1.transportType}|">Emission</p>
-	<p th:text="|Emission CO2: ${journey1.emissionCo2}|">Emission</p>
-	<p th:text="|Durée du trajet: ${journey1.duration}|">Duration</p>
-	<p th:text="|Type du trajet: ${journey1.type}|">Type</p>
-	<p th:text="|Temps de marche: ${journey1.walkDuration}|">Marche</p>
-	<br>
-</div>
-<br>
-<br>
-<br>
-<div th:each="journey2 : ${journeys2}">
-	<p th:text="|Transport: ${journey2.transportType}|">Emission</p>
-	<p th:text="|Emission CO2: ${journey2.emissionCo2}|">Emission</p>
-	<p th:text="|Durée du trajet: ${journey2.duration}|">Duration</p>
-	<p th:text="|Type du trajet: ${journey2.type}|">Type</p>
-	<p th:text="|Temps de marche: ${journey2.walkDuration}|">Marche</p>
-	<br>
-</div>
-<br>
-<br>
-<br>
-<div th:each="journey3 : ${journeys3}">
-	<p th:text="|Transport: ${journey3.transportType}|">Emission</p>
-	<p th:text="|Emission CO2: ${journey3.emissionCo2}|">Emission</p>
-	<p th:text="|Durée du trajet: ${journey3.duration}|">Duration</p>
-	<p th:text="|Type du trajet: ${journey3.type}|">Type</p>
-	<p th:text="|Temps de marche: ${journey3.walkDuration}|">Marche</p>
-	<br>
-</div>
+<body class="d-flex justify-content-between">
+	<div>
+		<h1><span style="color:#2E8B57;">EKO</span>LIS</h1>
+		<h2 class="learn">Jouez et apprenez à être ecolo pour vos trajets</h2>
+			<a class="button" href="menu" role="button">
+				<span>Jouer</span>
+				<div class="icon">
+					<i class="fa fa-play"></i>
+				</div>
+			</a>
+	</div>
+
+	<div class="d-flex align-items-end">
+		<p class="by">Un jeu by Keolis et Orléans Metropole</p>
+	</div>
+	
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
