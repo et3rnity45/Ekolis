@@ -18,14 +18,20 @@
 	<section class="levels">
 		<h2 class="text-center animated infinite pulse">Choissez un avatar pour le mode jeu !</h2>
 		<div class="avatars">
-
-				<input type="checkbox" id="checkbox" class="test">
-				<label for="checkbox">
-					<img type="checkbox" class ="avatar animated fadeInLeft" src="/pictures/bart.png" alt="first avatar">
+				<input type="checkbox" id="myCheckbox1" />
+				<label for="myCheckbox1">
+					<img class ="avatar animated fadeInLeft" src="/pictures/bart.png" alt="first avatar">
 				</label>
-				<img class ="avatar animated bounceInDown " src="/pictures/batman1.png" alt="second avatar">
-				<img class ="avatar animated zoomIn" src="/pictures/crane.png" alt="third avatar">
+				<input type="checkbox" id="myCheckbox1" />
+				<label for="">				
+					<img class ="avatar animated bounceInDown " src="/pictures/batman1.png" alt="second avatar">
+				</label>
+				<input type="checkbox" id="myCheckbox1" />
+				<label for="">
+					<img class ="avatar animated zoomIn" src="/pictures/crane.png" alt="third avatar">
+				</label>
 		</div>
+		
 	</section>
 
 	<section class="levels">
@@ -37,15 +43,13 @@
 	<div class="simulator">	
 		<h2>Mode simulateur</h2>	
 		<button class="level validated2">Simulateur</button>  
-	</div>
-	
-	
+	</div>	
 </body>
 <script>
 window.onload = setClass();
 
 function setClass() {
-	var isLocked = [true, true, false];
+	var isLocked = [true, false, false];
 	const buttons = document.getElementsByClassName('level');
 
 	[...buttons].forEach((button, i) => {
