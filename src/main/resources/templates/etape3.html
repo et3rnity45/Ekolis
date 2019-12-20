@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<title th:text="'Ekolis | Parcours n°' + ${level.id}">Ekolis | Parcours n°1</title>
+	<title>Ekolis | Etape n°2</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,13 +50,13 @@
 						<div class="col-9 mt-2 mr-auto rounded etape">
 							<div class="row">
 								<div class="col-7">
-								<h1>Etape 1</h1>
+								<h1>Etape 2</h1>
 								</div>
 								<div class="col-2 mt-3"> 
 									<button id="etape" class="voir-carte"><p>voir l'étape</p></button>
 								</div>
 							</div>
-							<p>Choisisez le moyen de vous rendre du Lab'O au Faubourg Madeleine : 900m</p>
+							<p>Choisisez le moyen de vous rendre de la place de l'étape au Palais des Sports : 1100m</p>
 							<div class="container ">
 								<div class="row border-bottom">
 									<div class="col-6">
@@ -70,7 +70,7 @@
 									<div class="col-6">
 										<p>A vélo</p>
 									</div>
-									<div class="col-6" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Vélo'}">
+									<div class="col-6" th:each="journey : ${journeys3}" th:if="${journey.transportType == 'Vélo'}">
 										<p th:if="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m0${journey.duration % 60}s|">temps</p>
 										<p th:unless="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m${journey.duration % 60}s|">temps</p>
 									</div>
@@ -79,7 +79,7 @@
 									<div class="col-6">
 										<p>En bus</p>
 									</div>
-									<div class="col-6" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Bus/Tram'}">
+									<div class="col-6" th:each="journey : ${journeys3}" th:if="${journey.transportType == 'Bus/Tram'}">
 										<p th:if="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m0${journey.duration % 60}s|">temps</p>
 										<p th:unless="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m${journey.duration % 60}s|">temps</p>
 									</div>
@@ -89,14 +89,14 @@
 										<p>En voiture</p>
 									</div>
 									<div class="col-6">
-										<p>2m10s</p>
+										<p>4m10s</p>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-6">
 										<p>A pied</p>
 									</div>
-									<div class="col-6" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Marche'}">
+									<div class="col-6" th:each="journey : ${journeys3}" th:if="${journey.transportType == 'Marche'}">
 										<p th:if="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m0${journey.duration % 60}s|">temps</p>
 										<p th:unless="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m${journey.duration % 60}s|">temps</p>
 									</div>
@@ -113,7 +113,7 @@
 	<!-- boutton jeu -->
 		<div class="row justify-content-md-center m-1 fixed-bottom">
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}|" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Vélo'}">
+				<form method="post" th:action="|/parcours/${level.id}/etape3|" th:each="journey : ${journeys3}" th:if="${journey.transportType == 'Vélo'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}" >
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt1" type="submit">
@@ -124,7 +124,7 @@
 				</form>
 			</div>
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}|" th:each="journey, iter : ${journeys1}" th:if="${journey.transportType == 'Marche'}">
+				<form method="post" th:action="|/parcours/${level.id}/etape3|" th:each="journey, iter : ${journeys3}" th:if="${journey.transportType == 'Marche'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}" >
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt2" type="submit">
@@ -135,7 +135,7 @@
 				</form>
 			</div>
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}|" th:each="journey, iter : ${journeys1}" th:if="${journey.transportType == 'Bus/Tram'}">
+				<form method="post" th:action="|/parcours/${level.id}/etape3|" th:each="journey, iter : ${journeys3}" th:if="${journey.transportType == 'Bus/Tram'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}">
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt3" type="submit">
@@ -149,7 +149,7 @@
 				</form>
 			</div>
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}|" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Voiture'}">
+				<form method="post" th:action="|/parcours/${level.id}/etape3|" th:each="journey : ${journeys3}" th:if="${journey.transportType == 'Voiture'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}" >
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt4" type="submit">

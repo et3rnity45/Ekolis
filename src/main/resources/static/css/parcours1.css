@@ -1,10 +1,10 @@
 .page{
 	width: 612px;
-	height: 1258px;
+	height: 1158px;
 	background-image:url(../pictures/parcours.png);
 	background-repeat: no-repeat;
 	background-size: 101%;
-	border: 1px solid red;
+
 }
 
 .cont{

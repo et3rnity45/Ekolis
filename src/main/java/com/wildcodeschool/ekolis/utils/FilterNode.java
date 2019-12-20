@@ -21,7 +21,7 @@ public class FilterNode {
 		
 		JsonNode jsonObject = connectApi.createRequest(newFrom, newTo);
 		List<Journey> journeys = new ArrayList<>();
-		for (int i = 0; i < jsonObject.size(); i++) {
+		for (int i = 0; i < 3; i++) {
 			if (jsonObject.get(i).get("distances").get("bike").intValue() != 0) {
 				transportType = "Vélo";
 			} else if (jsonObject.get(i).get("co2_emission").get("value").intValue() != 0) {
@@ -35,6 +35,7 @@ public class FilterNode {
 			String type = jsonObject.get(i).get("type").toString();
 			journeys.add(new Journey(transportType, emissionCo2, duration, walkDuration, type));
 		}
+		jsonObject = connectApi.createRequest2(newFrom, newTo);
 		return journeys;
 	}
 	
