@@ -70,7 +70,7 @@
 									<div class="col-6">
 										<p>A vélo</p>
 									</div>
-									<div class="col-6" th:each="journey : ${journeys2}" th:if="${journey.transportType == 'Vélo'}">
+									<div class="col-6" th:each="journey : ${journeys3}" th:if="${journey.transportType == 'Vélo'}">
 										<p th:if="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m0${journey.duration % 60}s|">temps</p>
 										<p th:unless="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m${journey.duration % 60}s|">temps</p>
 									</div>
@@ -79,7 +79,7 @@
 									<div class="col-6">
 										<p>En bus</p>
 									</div>
-									<div class="col-6" th:each="journey : ${journeys2}" th:if="${journey.transportType == 'Bus/Tram'}">
+									<div class="col-6" th:each="journey : ${journeys3}" th:if="${journey.transportType == 'Bus/Tram'}">
 										<p th:if="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m0${journey.duration % 60}s|">temps</p>
 										<p th:unless="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m${journey.duration % 60}s|">temps</p>
 									</div>
@@ -96,7 +96,7 @@
 									<div class="col-6">
 										<p>A pied</p>
 									</div>
-									<div class="col-6" th:each="journey : ${journeys2}" th:if="${journey.transportType == 'Marche'}">
+									<div class="col-6" th:each="journey : ${journeys3}" th:if="${journey.transportType == 'Marche'}">
 										<p th:if="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m0${journey.duration % 60}s|">temps</p>
 										<p th:unless="${journey.duration % 60 < 10}" th:text="|${journey.duration / 60}m${journey.duration % 60}s|">temps</p>
 									</div>
@@ -113,7 +113,7 @@
 	<!-- boutton jeu -->
 		<div class="row justify-content-md-center m-1 fixed-bottom">
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}/etape2|" th:each="journey : ${journeys2}" th:if="${journey.transportType == 'Vélo'}">
+				<form method="post" th:action="|/parcours/${level.id}/etape3|" th:each="journey : ${journeys3}" th:if="${journey.transportType == 'Vélo'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}" >
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt1" type="submit">
@@ -124,7 +124,7 @@
 				</form>
 			</div>
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}/etape2|" th:each="journey, iter : ${journeys2}" th:if="${journey.transportType == 'Marche'}">
+				<form method="post" th:action="|/parcours/${level.id}/etape3|" th:each="journey, iter : ${journeys3}" th:if="${journey.transportType == 'Marche'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}" >
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt2" type="submit">
@@ -135,7 +135,7 @@
 				</form>
 			</div>
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}/etape2|" th:each="journey, iter : ${journeys2}" th:if="${journey.transportType == 'Bus/Tram'}">
+				<form method="post" th:action="|/parcours/${level.id}/etape3|" th:each="journey, iter : ${journeys3}" th:if="${journey.transportType == 'Bus/Tram'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}">
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt3" type="submit">
@@ -149,7 +149,7 @@
 				</form>
 			</div>
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}/etape2|" th:each="journey : ${journeys2}" th:if="${journey.transportType == 'Voiture'}">
+				<form method="post" th:action="|/parcours/${level.id}/etape3|" th:each="journey : ${journeys3}" th:if="${journey.transportType == 'Voiture'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}" >
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt4" type="submit">

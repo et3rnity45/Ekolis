@@ -66,7 +66,7 @@ public class ParcoursController {
 		List<Journey> journeys3 = filterNode.buildJourneys(level.getPos3(), level.getPos4());
 		journeys3.add(new Journey("Voiture", 367, 260, 0, "voiture"));
 		model.addAttribute("level", level);
-		model.addAttribute("journeys2", journeys3);
+		model.addAttribute("journeys3", journeys3);
 		return "etape3";
 	}
 	
@@ -74,10 +74,10 @@ public class ParcoursController {
 	public String getAnswer3(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
 		globalEmission += emission;
 		globalTime += time;
-		return "redirect:/result" + id;
+		return "redirect:/result";
 	}
 	
-	@GetMapping("/result{id}")
+	@GetMapping("/result")
 	public String toResult(Model model, @PathVariable int id) {
 		model.addAttribute(globalEmission);
 		model.addAttribute(globalTime);
