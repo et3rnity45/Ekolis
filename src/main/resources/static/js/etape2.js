@@ -53,11 +53,13 @@ function showArrivee(){
 }
 document.getElementById('arrivee').onclick=showArrivee;
 
-function showEtape1() {
-	var markerEtape1 = L.marker([pos2[0], pos2[1]], {icon: etapeIcon}).addTo(mymap);
-	mymap.setView([pos2[0], pos2[1]], 18);
+
+function showEtape2() {
+	console.log('test')
+	var markerEtape2 = L.marker([pos3[0], pos3[1]], {icon: etapeIcon}).addTo(mymap);
+	mymap.setView([pos3[0], pos3[1]], 18);
 }
-document.getElementById('etape1').onclick=showEtape1
+document.getElementById('etape2').onclick=showEtape2
 
 var latlngs = [
     [47.89400, 1.89510],
