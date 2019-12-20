@@ -9,14 +9,15 @@
 <script src="js/chart.min.js"></script>
 <script type="text/javascript"	src="https://www.gstatic.com/charts/loader.js"></script>
 <script> google.charts.load('current', {'packages':['corechart']});
+/*<![CDATA[*/
        google.charts.setOnLoadCallback(drawChart);
 
        function drawChart() {
 
          var data = google.visualization.arrayToDataTable([
            ['Task', 'Hours per Day'],
-           ['Ecologique',1],
-           ['Polluant',5],
+           ['Ecologique',[[${resultEmission}]]],
+           ['Polluant',[[${10 -resultEmission}]]],
          ]);
 
          var options = {
@@ -33,6 +34,7 @@
 
          chart.draw(data, options);
        }
+/*]]>*/
 </script>
 
 </head>
@@ -42,8 +44,9 @@
 </div>
 	<h1 class="text-center pb-3">Resultats</h1>
 	<ul>
-		<li>Vous avez mis 00 minutes</li>
-		<li>Vous avez émis 00g de CO2</li>
+		<li th:if="${globalTime % 60 < 10}" th:text="|${globalTime / 60}m0${globalTime % 60}s|">Vous avez mis 00 minutes</li>
+		<li th:unless="${globalTime % 60 < 10}" th:text="|${globalTime / 60}m${globalTime % 60}s|">Vous avez mis 00 minutes</li>
+		<li th:text="|Vous avez émis ${globalEmission}g de C02|">Vous avez émis 00g de CO2</li>
 		<li>Vous avez dépensé 00 calories</li>
 	</ul>
 	<div id="piechart" class="container-fluid"></div>
