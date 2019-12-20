@@ -41,33 +41,33 @@ public class ParcoursController {
 	public String getAnswer1(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
 		globalEmission += emission;
 		globalTime += time;
-		return "redirect:/parcours/" + id + "/etape1";
-	}
-	
-	@GetMapping("/parcours/{id}/etape1")
-	public String toFirstEtape(Model model, @PathVariable int id) {
-		List<Journey> journeys2 = filterNode.buildJourneys(level.getPos2(), level.getPos3());
-		model.addAttribute("level", level);
-		model.addAttribute("journeys2", journeys2);
-		return "parcours2";
-	}
-	
-	@PostMapping("/parcours/{id}/etape1")
-	public String getAnswer2(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
-		globalEmission += emission;
-		globalTime += time;
 		return "redirect:/parcours/" + id + "/etape2";
 	}
 	
 	@GetMapping("/parcours/{id}/etape2")
+	public String toFirstEtape(Model model, @PathVariable int id) {
+		List<Journey> journeys2 = filterNode.buildJourneys(level.getPos2(), level.getPos3());
+		model.addAttribute("level", level);
+		model.addAttribute("journeys2", journeys2);
+		return "etape2";
+	}
+	
+	@PostMapping("/parcours/{id}/etape2")
+	public String getAnswer2(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
+		globalEmission += emission;
+		globalTime += time;
+		return "redirect:/parcours/" + id + "/etape3";
+	}
+	
+	@GetMapping("/parcours/{id}/etape3")
 	public String toSecondEtape(Model model, @PathVariable int id) {
 		List<Journey> journeys3 = filterNode.buildJourneys(level.getPos3(), level.getPos4());
 		model.addAttribute("level", level);
 		model.addAttribute("journeys2", journeys3);
-		return "parcours3";
+		return "etape3";
 	}
 	
-	@PostMapping("/parcours/{id}/etape2")
+	@PostMapping("/parcours/{id}/etape3")
 	public String getAnswer3(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
 		globalEmission += emission;
 		globalTime += time;

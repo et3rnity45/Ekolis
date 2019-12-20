@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-	<link rel="stylesheet" href="../css/parcours1.css">
+	<link rel="stylesheet" href="/css/parcours1.css">
 	
 </head>
 <body class="page">
@@ -113,7 +113,7 @@
 	<!-- boutton jeu -->
 		<div class="row justify-content-md-center m-1 fixed-bottom">
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}/etape1|" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Vélo'}">
+				<form method="post" th:action="|/parcours/${level.id}|" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Vélo'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}" >
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt1" type="submit">
@@ -124,7 +124,7 @@
 				</form>
 			</div>
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}/etape1|" th:each="journey, iter : ${journeys1}" th:if="${journey.transportType == 'Marche'}">
+				<form method="post" th:action="|/parcours/${level.id}|" th:each="journey, iter : ${journeys1}" th:if="${journey.transportType == 'Marche'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}" >
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt2" type="submit">
@@ -135,7 +135,7 @@
 				</form>
 			</div>
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}/etape1|" th:each="journey, iter : ${journeys1}" th:if="${journey.transportType == 'Bus/Tram'}">
+				<form method="post" th:action="|/parcours/${level.id}|" th:each="journey, iter : ${journeys1}" th:if="${journey.transportType == 'Bus/Tram'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}">
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt3" type="submit">
@@ -149,7 +149,7 @@
 				</form>
 			</div>
 			<div class="col-6 text-center px-2 py-1">
-				<form method="post" th:action="|/parcours/${level.id}/etape1|" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Voiture'}">
+				<form method="post" th:action="|/parcours/${level.id}|" th:each="journey : ${journeys1}" th:if="${journey.transportType == 'Voiture'}">
 				<input type="hidden" name="emission" th:value="${journey.emissionCo2}" >
 				<input type="hidden" name="time" th:value="${journey.duration}">
 				<button class="bouton bt4" type="submit">
