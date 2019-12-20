@@ -47,7 +47,7 @@
 		<li th:if="${globalTime % 60 < 10}" th:text="|${globalTime / 60}m0${globalTime % 60}s|">Vous avez mis 00 minutes</li>
 		<li th:unless="${globalTime % 60 < 10}" th:text="|${globalTime / 60}m${globalTime % 60}s|">Vous avez mis 00 minutes</li>
 		<li th:text="|Vous avez émis ${globalEmission}g de C02|">Vous avez émis 00g de CO2</li>
-		<li>Vous avez dépensé 00 calories</li>
+		<li th:text="|Vous avez dépensé ${calories} calories|">Vous avez dépensé 00 calories</li>
 	</ul>
 	<div id="piechart" class="container-fluid"></div>
 

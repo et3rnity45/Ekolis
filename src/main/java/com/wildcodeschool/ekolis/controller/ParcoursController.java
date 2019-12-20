@@ -22,6 +22,7 @@ public class ParcoursController {
 	private Level level;
 	private int globalEmission = 0;
 	private int globalTime = 0;
+	private int globalWalk = 0;
 	
 	@Autowired
 	private LevelRepository levelRepository;
@@ -30,6 +31,7 @@ public class ParcoursController {
 	public String toParcours(Model model, @PathVariable int id) {
 		globalEmission = 0;
 		globalTime = 0;
+		globalWalk = 0;
 		level = levelRepository.findById(id).get();
 		List<Journey> journeys1 = filterNode.buildJourneys(level.getPos1(), level.getPos2());
 		journeys1.add(new Journey("Voiture", 560, 130, 0, "voiture"));
@@ -39,9 +41,10 @@ public class ParcoursController {
 	}
 	
 	@PostMapping("/parcours/{id}")
-	public String getAnswer1(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
+	public String getAnswer1(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time, @RequestParam int walk) {
 		globalEmission += emission;
 		globalTime += time;
+		globalWalk += walk;
 		return "redirect:/parcours/" + id + "/etape2";
 	}
 	
@@ -55,9 +58,10 @@ public class ParcoursController {
 	}
 	
 	@PostMapping("/parcours/{id}/etape2")
-	public String getAnswer2(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
+	public String getAnswer2(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time, @RequestParam int walk) {
 		globalEmission += emission;
 		globalTime += time;
+		globalWalk += walk;
 		return "redirect:/parcours/" + id + "/etape3";
 	}
 	
@@ -71,19 +75,20 @@ public class ParcoursController {
 	}
 	
 	@PostMapping("/parcours/{id}/etape3")
-	public String getAnswer3(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
+	public String getAnswer3(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time, @RequestParam int walk) {
 		globalEmission += emission;
 		globalTime += time;
+		globalWalk += walk;
 		return "redirect:/results";
 	}
 	
 	@GetMapping("/results")
 	public String toResult(Model model) {
 		float resultEmission =(float) (2052 - globalEmission)/2052 * 10;
-		System.out.println(resultEmission);
-		System.out.println(globalEmission);
+		int calories = globalWalk / 10;
 		model.addAttribute("globalEmission", globalEmission);
 		model.addAttribute("resultEmission", resultEmission);
+		model.addAttribute("calories", calories);
 		model.addAttribute("globalTime", globalTime);
 		return "pageResultat";
 	}
