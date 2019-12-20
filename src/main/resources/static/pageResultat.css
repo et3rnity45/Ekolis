@@ -1,0 +1,61 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	
+}
+
+img{
+	height:1158px;
+	width:612px;
+}
+body{
+	height:1158px;
+	width:612px;
+	background:url("../parcours.png") no-repeat;
+	background-size:615px 1265px;
+}
+
+.gif{
+	height:300px;
+	margin:auto;
+}
+h1{
+	padding-top:1rem;
+	color:green;
+	font-size:130px!important;
+}
+
+li{
+	margin-top:1rem;
+	margin-left:4rem;
+	font-size:20px;
+}
+
+#piechart{
+	height: 300px;
+}
+
+.button {
+  display: block;
+  background-color: #2E8B57!important;
+  margin: auto;
+  color: #fff;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4); 
+  font-size:2rem!important;
+  padding:1rem!important;
+  border:none!important;
+}
+
+.menu{
+	width:200px;
+}
+
+.button:hover{
+	color:white!important;
+	text-decoration:none;
+}
+

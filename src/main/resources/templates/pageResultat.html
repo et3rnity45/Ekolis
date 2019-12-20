@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Ekolis - Resultats</title>
+<link rel="stylesheet" type="text/css" href="/pageResultat.css"/>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="js/chart.min.js"></script>
+<script type="text/javascript"	src="https://www.gstatic.com/charts/loader.js"></script>
+<script> google.charts.load('current', {'packages':['corechart']});
+       google.charts.setOnLoadCallback(drawChart);
+
+       function drawChart() {
+
+         var data = google.visualization.arrayToDataTable([
+           ['Task', 'Hours per Day'],
+           ['Ecologique',     1],
+           ['Polluant',      3],
+         ]);
+
+         var options = {
+            title: 'Mon pourcentage écologie',
+            backgroundColor : 'transparent',
+        	slices: {
+               0: { color: 'green' },
+               1: { color: 'red' }
+             }
+
+         };
+
+         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+         chart.draw(data, options);
+       }
+</script>
+
+</head>
+<body>
+<div >
+<div class="text-center">	<img class="gif container" src="https://media.giphy.com/media/WYEWpk4lRPDq0/giphy.gif"/>
+</div>
+	<h1 class="text-center pb-3">Resultats</h1>
+	<ul>
+		<li>Vous avez mis 00 minutes</li>
+		<li>Vous avez émis 00g de CO2</li>
+		<li>Vous avez dépensé 00 calories</li>
+	</ul>
+	<div id="piechart" class="container-fluid"></div>
+
+</div>
+<div class="d-flex bd-highlight mb-3">
+			<a class="button float-left" href="menu" role="button">
+				Recommencer
+			</a>
+			<a class="button float-right" href="menu" role="button">
+				Niveau Suivant
+			</a>
+</div>
+<div class="text-center">
+			<a class="button btn btn-primary menu" href="menu" role="button">
+				Menu
+			</a>
+			</div>
+</body>
+</html>
