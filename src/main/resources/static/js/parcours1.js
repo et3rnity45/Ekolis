@@ -19,21 +19,21 @@ var mymap = L.map('mapid').setView([47.8989, 1.9015], 15);
 
 
 var arrivalIcon = L.icon({
-    iconUrl: '../pictures/arrivee.svg',
+    iconUrl: '/pictures/arrivee.svg',
     iconSize:     [38, 95], 
     iconAnchor:   [22, 94], 
     popupAnchor:  [-3, -76] 
 });
 
 var departIcon = L.icon({
-    iconUrl: '../pictures/home.svg',
+    iconUrl: '/pictures/home.svg',
     iconSize:     [38, 95],
     iconAnchor:   [22, 94], 
     popupAnchor:  [-3, -76]
 });
 
 var etapeIcon = L.icon({
-    iconUrl: '../pictures/avatar1.svg',
+    iconUrl: '/pictures/bart.png',
     iconSize:     [38, 95],
     iconAnchor:   [22, 94], 
     popupAnchor:  [-3, -76]

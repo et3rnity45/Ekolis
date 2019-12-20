@@ -32,6 +32,7 @@ public class ParcoursController {
 		globalTime = 0;
 		level = levelRepository.findById(id).get();
 		List<Journey> journeys1 = filterNode.buildJourneys(level.getPos1(), level.getPos2());
+		journeys1.add(new Journey("Voiture", 290, 130, 0, "voiture"));
 		model.addAttribute("level", level);
 		model.addAttribute("journeys1", journeys1);
 		return "parcours1";
@@ -47,6 +48,7 @@ public class ParcoursController {
 	@GetMapping("/parcours/{id}/etape2")
 	public String toFirstEtape(Model model, @PathVariable int id) {
 		List<Journey> journeys2 = filterNode.buildJourneys(level.getPos2(), level.getPos3());
+		journeys2.add(new Journey("Voiture", 412, 502, 0, "voiture"));
 		model.addAttribute("level", level);
 		model.addAttribute("journeys2", journeys2);
 		return "etape2";
@@ -62,6 +64,7 @@ public class ParcoursController {
 	@GetMapping("/parcours/{id}/etape3")
 	public String toSecondEtape(Model model, @PathVariable int id) {
 		List<Journey> journeys3 = filterNode.buildJourneys(level.getPos3(), level.getPos4());
+		journeys3.add(new Journey("Voiture", 367, 260, 0, "voiture"));
 		model.addAttribute("level", level);
 		model.addAttribute("journeys2", journeys3);
 		return "etape3";

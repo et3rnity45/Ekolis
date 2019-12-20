@@ -35,7 +35,6 @@ public class FilterNode {
 			String type = jsonObject.get(i).get("type").toString();
 			journeys.add(new Journey(transportType, emissionCo2, duration, walkDuration, type));
 		}
-		journeys.add(new Journey("Voiture", 412, 502, 0, "voiture"));
 		jsonObject = connectApi.createRequest2(newFrom, newTo);
 		return journeys;
 	}
