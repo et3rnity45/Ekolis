@@ -74,14 +74,19 @@ public class ParcoursController {
 	public String getAnswer3(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
 		globalEmission += emission;
 		globalTime += time;
-		return "redirect:/result";
+		return "redirect:/results";
 	}
 	
-	@GetMapping("/result")
-	public String toResult(Model model, @PathVariable int id) {
-		model.addAttribute(globalEmission);
-		model.addAttribute(globalTime);
-		return "result";
+	@GetMapping("/results")
+	public String toResult(Model model) {
+		Long resultEmission =(long) (globalEmission / (412 + 367 + 290 - globalEmission)) * 10;
+		System.out.println(resultEmission);
+		System.out.println(globalEmission);
+		model.addAttribute("globalEmission", globalEmission);
+		model.addAttribute("resultEmission", resultEmission);
+		model.addAttribute("globalTime", globalTime);
+		return "pageResultat";
 	}
+
 }
 
