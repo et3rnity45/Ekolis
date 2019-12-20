@@ -54,13 +54,13 @@ function showArrivee(){
 document.getElementById('arrivee').onclick=showArrivee;
 
 function showEtape1() {
-	var markerEtape1 = L.marker([pos2[0], pos2[1]], {icon: departIcon}).addTo(mymap);
+	var markerEtape1 = L.marker([pos2[0], pos2[1]], {icon: etapeIcon}).addTo(mymap);
 	mymap.setView([pos2[0], pos2[1]], 18);
 }
 document.getElementById('etape').onclick=showEtape1
 
 function showEtape2() {
-	var markerEtape2 = L.marker([pos3[0], pos3[1]], {icon: departIcon}).addTo(mymap);
+	var markerEtape2 = L.marker([pos3[0], pos3[1]], {icon: etapeIcon}).addTo(mymap);
 	mymap.setView([pos3[0], pos3[1]], 18);
 }
 document.getElementById('etape').onclick=showEtape2
