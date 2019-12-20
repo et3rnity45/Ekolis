@@ -20,22 +20,22 @@ var mymap = L.map('mapid').setView([47.8989, 1.9015], 15);
 
 var arrivalIcon = L.icon({
     iconUrl: '/pictures/arrivee.svg',
-    iconSize:     [38, 95], 
-    iconAnchor:   [22, 94], 
+    iconSize:     [38, 96], 
+    iconAnchor:   [19, 48], 
     popupAnchor:  [-3, -76] 
 });
 
 var departIcon = L.icon({
     iconUrl: '/pictures/home.svg',
-    iconSize:     [38, 95],
-    iconAnchor:   [22, 94], 
+    iconSize:     [38, 96],
+    iconAnchor:   [19, 48], 
     popupAnchor:  [-3, -76]
 });
 
 var etapeIcon = L.icon({
     iconUrl: '/pictures/bart.png',
-    iconSize:     [38, 95],
-    iconAnchor:   [22, 94], 
+    iconSize:     [55, 55],
+    iconAnchor:   [27, 27], 
     popupAnchor:  [-3, -76]
 });
 
