@@ -8,4 +8,8 @@ import com.wildcodeschool.ekolis.entities.Level;
 @Repository
 public interface LevelRepository extends JpaRepository<Level, Integer>{
 
+	Level findByName(String name);
+	
+	Level deleteByName(String name);
+	
 }

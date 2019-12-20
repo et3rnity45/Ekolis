@@ -86,14 +86,28 @@ public class ParcoursController {
 	public String toResult(Model model) {
 		float resultEmission =(float) (2052 - globalEmission)/2052 * 10;
 		int calories = globalWalk / 10;
-		if (resultEmission < 5) {
-			levelRepository.findById(2).get().setUnlock(true);
+		if (resultEmission > 5) {
+			levelRepository.deleteById(2);
+			levelRepository.save(new Level(2, "Niveau 2", "47.90701, 1.90576", "47.89098, 1.89761", "47.86642, 1.89823", "47.84567, 1.94082", true));
 		}
 		model.addAttribute("globalEmission", globalEmission);
 		model.addAttribute("resultEmission", resultEmission);
 		model.addAttribute("calories", calories);
 		model.addAttribute("globalTime", globalTime);
 		return "pageResultat";
+	}
+	
+	@GetMapping("/parcours/2")
+	public String toParcours2(Model model) {
+		globalEmission = 0;
+		globalTime = 0;
+		globalWalk = 0;
+		level = levelRepository.findByName("Niveau 2");
+		List<Journey> journeys1 = filterNode.buildJourneys(level.getPos1(), level.getPos2());
+		journeys1.add(new Journey("Voiture", 560, 130, 0, "voiture"));
+		model.addAttribute("level", level);
+		model.addAttribute("journeys1", journeys1);
+		return "parcours2";
 	}
 
 }

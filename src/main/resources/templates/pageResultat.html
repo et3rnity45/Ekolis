@@ -52,15 +52,15 @@
 	<div id="piechart" class="container-fluid"></div>
 	</div>
 	<div class="d-flex bd-highlight mb-3">
-				<a class="button float-left" href="menu" role="button">
+				<a class="button float-left" href="/parcours/1" role="button">
 					Recommencer
 				</a>
-				<a class="button float-right" href="menu" role="button">
+				<a th:if="${resultEmission > 5}" class="button float-right" href="/parcours/2" role="button">
 					Niveau Suivant
 				</a>
 	</div>
 	<div class="text-center">
-		<a class="button btn btn-primary menu" href="menu" role="button">
+		<a class="button btn btn-primary menu" href="/menu" role="button">
 			Menu
 		</a>
 	</div>

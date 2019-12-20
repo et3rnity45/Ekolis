@@ -20,7 +20,17 @@ public class Level {
 	@Column(columnDefinition="tinyint(1)")
 	private boolean isUnlock;
 	
-	private Level() {}
+	public Level() {}
+	
+	public Level(Integer id, String name, String pos1, String pos2, String pos3, String pos4, boolean isUnlock) {
+		this.id = id;
+		this.name = name;
+		this.pos1 = pos1;
+		this.pos2 = pos2;
+		this.pos3 = pos3;
+		this.pos4 = pos4;
+		this.isUnlock = isUnlock;
+	}
 
 	public Integer getId() {
 		return id;

@@ -45,11 +45,12 @@
 		<button class="level validated2">Simulateur</button>  
 	</div>	
 </body>
+<script th:text="|var isLocked = [${level1}, ${level2}, ${level3}];|">
+</script>
 <script>
 window.onload = setClass();
 
 function setClass() {
-	var isLocked = [true, false, false];
 	const buttons = document.getElementsByClassName('level');
 
 	[...buttons].forEach((button, i) => {
