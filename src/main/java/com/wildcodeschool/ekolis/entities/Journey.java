@@ -16,6 +16,13 @@ public class Journey {
 		this.type = type;
 	}
 	
+	public Journey(String transportType, Integer emissionCo2, Integer walkDuration, String type) {
+		this.transportType = transportType;
+		this.emissionCo2 = emissionCo2;
+		this.walkDuration = walkDuration;
+		this.type = type;
+	}
+	
 	public String getTransportType() {
 		return transportType;
 	}

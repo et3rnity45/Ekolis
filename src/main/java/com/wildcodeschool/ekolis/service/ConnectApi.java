@@ -24,6 +24,7 @@ public class ConnectApi {
 			              .queryParam("from", fromPos)
 			              .queryParam("to", toPos)
 			              .queryParam("traveler_type", "fast_walker")
+			              .queryParam("min_nb_journey", 3)
 			              .build("fr-cen"))
 			      .headers(headers -> headers.setBasicAuth(token, ""))
 			      .retrieve()
@@ -33,6 +34,31 @@ public class ConnectApi {
 		try {
 			ObjectMapper objectMapper = new ObjectMapper();
 			jsonObject = objectMapper.readTree(response).get("journeys");
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		return jsonObject;
+	}
+	
+	public JsonNode createRequest2(String fromPos, String toPos) {
+		
+		WebClient webClient = WebClient.create(url);
+		Mono<String> call = webClient.get()
+			      .uri(uriBuilder-> uriBuilder
+			    		  .path("/coverage/{coverage}/journeys")
+			              .queryParam("from", fromPos)
+			              .queryParam("to", toPos)
+			              .queryParam("traveler_type", "fast_walker")
+			              .queryParam("min_nb_journey", 3)
+			              .build("fr-cen"))
+			      .headers(headers -> headers.setBasicAuth(token, ""))
+			      .retrieve()
+			      .bodyToMono(String.class);
+		String response = call.block();
+		
+		try {
+			ObjectMapper objectMapper = new ObjectMapper();
+			jsonObject = objectMapper.readTree(response).get("context").get("car_direct_path").get("co2_emission").get("value");
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
