@@ -39,31 +39,31 @@
 
 </head>
 <body>
-<div >
-<div class="text-center">	<img class="gif container" src="https://media.giphy.com/media/WYEWpk4lRPDq0/giphy.gif"/>
-</div>
-	<h1 class="text-center pb-3">Resultats</h1>
-	<ul>
-		<li th:if="${globalTime % 60 < 10}" th:text="|${globalTime / 60}m0${globalTime % 60}s|">Vous avez mis 00 minutes</li>
-		<li th:unless="${globalTime % 60 < 10}" th:text="|${globalTime / 60}m${globalTime % 60}s|">Vous avez mis 00 minutes</li>
-		<li th:text="|Vous avez émis ${globalEmission}g de C02|">Vous avez émis 00g de CO2</li>
-		<li>Vous avez dépensé 00 calories</li>
-	</ul>
-	<div id="piechart" class="container-fluid"></div>
+	<div >
+		<div th:if=" ${resultEmission <= 5}" class="text-center">	<img class="gif container" src="https://media.giphy.com/media/tCfCNszWj3EjK/giphy.gif"/></div>
+		<div th:unless=" ${resultEmission <= 5}" class="text-center">	<img class="gif container" src="https://media.giphy.com/media/l1KVcrdl7rJpFnY2s/giphy.gif"/></div>
 
-</div>
-<div class="d-flex bd-highlight mb-3">
-			<a class="button float-left" href="menu" role="button">
-				Recommencer
-			</a>
-			<a class="button float-right" href="menu" role="button">
-				Niveau Suivant
-			</a>
-</div>
-<div class="text-center">
-			<a class="button btn btn-primary menu" href="menu" role="button">
-				Menu
-			</a>
-			</div>
+			<h1 class="text-center pb-3">Resultats</h1>
+			<ul>
+				<li th:if="${globalTime % 60 < 10}" th:text="|${globalTime / 60}m0${globalTime % 60}s|">Vous avez mis 00 minutes</li>
+				<li th:unless="${globalTime % 60 < 10}" th:text="|${globalTime / 60}m${globalTime % 60}s|">Vous avez mis 00 minutes</li>
+				<li th:text="|Vous avez émis ${globalEmission}g de C02|">Vous avez émis 00g de CO2</li>
+				<li>Vous avez dépensé 00 calories</li>
+			</ul>
+			<div id="piechart" class="container-fluid"></div>
+	</div>
+	<div class="d-flex bd-highlight mb-3">
+				<a class="button float-left" href="menu" role="button">
+					Recommencer
+				</a>
+				<a class="button float-right" href="menu" role="button">
+					Niveau Suivant
+				</a>
+	</div>
+	<div class="text-center">
+		<a class="button btn btn-primary menu" href="menu" role="button">
+			Menu
+		</a>
+	</div>
 </body>
 </html>
