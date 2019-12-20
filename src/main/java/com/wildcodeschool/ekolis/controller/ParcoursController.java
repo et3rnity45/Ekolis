@@ -41,7 +41,7 @@ public class ParcoursController {
 	public String getAnswer1(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
 		globalEmission += emission;
 		globalTime += time;
-		return "/redirect:/parcours/" + id + "/etape1";
+		return "redirect:/parcours/" + id + "/etape1";
 	}
 	
 	@GetMapping("/parcours/{id}/etape1")
@@ -56,7 +56,7 @@ public class ParcoursController {
 	public String getAnswer2(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
 		globalEmission += emission;
 		globalTime += time;
-		return "/redirect:/parcours/" + id + "/etape2";
+		return "redirect:/parcours/" + id + "/etape2";
 	}
 	
 	@GetMapping("/parcours/{id}/etape2")
@@ -71,11 +71,13 @@ public class ParcoursController {
 	public String getAnswer3(Model model, @PathVariable int id, @RequestParam int emission, @RequestParam int time) {
 		globalEmission += emission;
 		globalTime += time;
-		return "/redirect:/result" + id;
+		return "redirect:/result" + id;
 	}
 	
 	@GetMapping("/result{id}")
 	public String toResult(Model model, @PathVariable int id) {
+		model.addAttribute(globalEmission);
+		model.addAttribute(globalTime);
 		return "result";
 	}
 }
