@@ -34,8 +34,4 @@ public class TestController {
 		return "test";
 	}
 	
-	@GetMapping("/menu")
-	public String toMenu() {
-		return "menu";
-	}
 }
