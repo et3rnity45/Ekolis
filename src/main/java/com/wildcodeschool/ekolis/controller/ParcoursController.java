@@ -86,6 +86,9 @@ public class ParcoursController {
 	public String toResult(Model model) {
 		float resultEmission =(float) (2052 - globalEmission)/2052 * 10;
 		int calories = globalWalk / 10;
+		if (resultEmission < 5) {
+			levelRepository.findById(2).get().setUnlock(true);
+		}
 		model.addAttribute("globalEmission", globalEmission);
 		model.addAttribute("resultEmission", resultEmission);
 		model.addAttribute("calories", calories);
